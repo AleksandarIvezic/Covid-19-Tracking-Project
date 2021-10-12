@@ -1,23 +1,34 @@
+import getData from '../../helpers/getData';
+
 const LOAD = 'air-polution-app/countries/LOAD';
 
-const initialValue = [];
+const initialValue = {
+  countries: [],
+};
+
 const countriesReducer = (state = initialValue, action) => {
   switch (action.type) {
     case LOAD:
       return {
         ...state,
-        countries: [action.payload],
+        countries: action.payload,
       };
     default:
       return state;
   }
 };
 
-const load = (payload) => (
-  {
-    type: LOAD,
-    payload,
-  }
-);
+const loadCountries = (payload) => ({
+  type: LOAD,
+  payload,
+});
 
-export { countriesReducer, load };
+const loadCountriesThunk = () => async (dispatch) => {
+  const data = await getData();
+  const { countries } = data;
+  if (countries) {
+    dispatch(loadCountries(countries));
+  }
+};
+
+export { countriesReducer, loadCountriesThunk };

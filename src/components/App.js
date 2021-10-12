@@ -4,9 +4,7 @@ import { Provider } from 'react-redux';
 import store from '../Redux/storeConfig';
 import Navbar from './Navbar';
 import Countries from './Countries';
-import States from './States';
-import Cities from './Cities';
-import City from './City';
+import States from './Country';
 
 function App() {
   return (
@@ -19,12 +17,6 @@ function App() {
           </Route>
           <Route path="/states">
             <States />
-          </Route>
-          <Route path="states/cities">
-            <Cities />
-          </Route>
-          <Route paht="states/cities/city">
-            <City />
           </Route>
         </Switch>
       </div>
