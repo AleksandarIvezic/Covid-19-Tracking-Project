@@ -1,26 +1,24 @@
 import '../styling/App.css';
 import { Route, Switch } from 'react-router';
-import { Provider } from 'react-redux';
-import store from '../Redux/storeConfig';
+import { useSelector } from 'react-redux';
 import Navbar from './Navbar';
 import Countries from './Countries';
-import States from './Country';
+import Country from './Country';
 
 function App() {
+  const currentCountry = useSelector((state) => state.countriesReducer.currentCountry);
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Countries />
-          </Route>
-          <Route path="/states">
-            <States />
-          </Route>
-        </Switch>
-      </div>
-    </Provider>
+    <div className="App">
+      <Navbar />
+      <Switch>
+        <Route exact path="/">
+          <Countries />
+        </Route>
+        <Route path="/country">
+          <Country current={currentCountry} />
+        </Route>
+      </Switch>
+    </div>
   );
 }
 

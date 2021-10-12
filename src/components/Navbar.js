@@ -6,7 +6,7 @@ const Navbar = () => {
   return (
     <nav className="d-flex justify-content-between">
       <button type="button" onClick={history.goBack}>&lt;</button>
-      <span>AirPollution</span>
+      <span>Track COVID-19</span>
       <div>
         <i className="fas fa-microphone" />
         <i className="fas fa-cog" />

@@ -1,6 +1,7 @@
 import getData from '../../helpers/getData';
 
-const LOAD = 'air-polution-app/countries/LOAD';
+const LOAD = 'covid-19-tracking-project/countries/LOAD';
+const SELECT = 'covid-19-tracking-project/countries/SELECT';
 
 const initialValue = {
   countries: [],
@@ -13,6 +14,11 @@ const countriesReducer = (state = initialValue, action) => {
         ...state,
         countries: action.payload,
       };
+    case SELECT:
+      return {
+        ...state,
+        currentCountry: action.payload,
+      };
     default:
       return state;
   }
@@ -20,6 +26,11 @@ const countriesReducer = (state = initialValue, action) => {
 
 const loadCountries = (payload) => ({
   type: LOAD,
+  payload,
+});
+
+const selectCountry = (payload) => ({
+  type: SELECT,
   payload,
 });
 
@@ -31,4 +42,4 @@ const loadCountriesThunk = () => async (dispatch) => {
   }
 };
 
-export { countriesReducer, loadCountriesThunk };
+export { countriesReducer, loadCountriesThunk, selectCountry };

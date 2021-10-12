@@ -1,9 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const States = () => (
-  <div>
-    <span>Country</span>
-  </div>
-);
+const Country = ({ current }) => {
+  const data = 'data';
+  return (
+    <div>
+      <span>{data}</span>
+      <h3>{current}</h3>
+    </div>
+  );
+};
 
-export default States;
+Country.propTypes = {
+  current: PropTypes.string.isRequired,
+};
+
+export default Country;
