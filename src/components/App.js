@@ -1,5 +1,5 @@
 import '../styling/App.css';
-import { Provider } from 'redux';
+import { Provider } from 'react-redux';
 import store from '../Redux/storeConfig';
 import Navbar from './Navbar';
 
