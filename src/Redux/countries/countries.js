@@ -14,7 +14,8 @@ const countriesReducer = (state = initialValue, action) => {
     case LOAD:
       return {
         ...state,
-        countries: action.payload,
+        countries: action.payload.countries,
+        total: action.payload.total,
       };
     case SELECT:
       return {
@@ -48,9 +49,8 @@ const loadHistory = (payload) => ({
 
 const loadCountriesThunk = () => async (dispatch) => {
   const data = await getData();
-  const { countries } = data;
-  if (countries) {
-    dispatch(loadCountries(countries));
+  if (data) {
+    dispatch(loadCountries(data));
   }
 };
 

@@ -6,6 +6,7 @@ import Search from './Search';
 
 const Countries = () => {
   const countries = useSelector((state) => state.countriesReducer.countries);
+  const total = useSelector((state) => state.countriesReducer.total);
   const dispatch = useDispatch();
   const [filteredCountries, setFilteredCountries] = useState(Object.keys(countries));
 
@@ -27,6 +28,16 @@ const Countries = () => {
 
   return (
     <div>
+      <div className="header d-flex p-1">
+        <img src="World_map.png" alt="world-map" width="50%" height="50%" />
+        <div className="right-side d-flex flex-column align-items-center justify-content-center w-50 fw-bold">
+          <h1 className="m-0 fs-3 lh-1 fw-bolder">WORLD</h1>
+          <span className="lh-1">
+            {total && Intl.NumberFormat('de-DE').format(total.today_confirmed)}
+          </span>
+          <span className="lh-1">total cases</span>
+        </div>
+      </div>
       <span>Select a country</span>
       <Search handleChange={handleChange} />
       <ul className="d-flex flex-wrap">
