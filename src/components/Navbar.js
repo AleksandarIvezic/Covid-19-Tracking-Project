@@ -1,15 +1,20 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
+import '../styling/Navbar.css';
 
 const Navbar = () => {
   const history = useHistory();
+  const location = useLocation();
   return (
-    <nav className="d-flex justify-content-between">
-      <button type="button" onClick={history.goBack}>&lt;</button>
-      <span>Track COVID-19</span>
+    <nav className="d-flex justify-content-between p-1">
+      {(location.pathname !== '/') ? <button className="back" type="button" onClick={history.goBack}><i className="fas fa-chevron-left text-light"> </i></button> : <span className="fw-bold text-uppercase">Countries</span>}
+      <span className="fw-light fs-6 text-lowercase">
+        Track COVID-19
+        {location.pathname}
+      </span>
       <div>
-        <i className="fas fa-microphone" />
-        <i className="fas fa-cog" />
+        <i className="fas fa-microphone mx-1" />
+        <i className="fas fa-cog mx-1" />
       </div>
     </nav>
   );

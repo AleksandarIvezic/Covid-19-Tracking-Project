@@ -1,0 +1,9 @@
+.back {
+  border: none;
+  background: transparent;
+  color: #fff;
+}
+
+i:hover {
+  cursor: pointer;
+}
