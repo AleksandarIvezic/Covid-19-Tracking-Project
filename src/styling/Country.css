@@ -1,0 +1,10 @@
+.country {
+  height: 150px;
+  width: 100%;
+}
+
+.c-img {
+  background: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fhealth.esc2.net%2Fsites%2FHealth%2Ffiles%2Fpictures%2Fcorona.svg&imgrefurl=https%3A%2F%2Fhealth.esc2.net%2Fcontent%2Fcovid-19-resources&tbnid=VToXLmwTs9Oc1M&vet=12ahUKEwjh__6WisfzAhWJyqQKHeeLCa0QMygDegUIARCKAQ..i&docid=1ZSbu8u8L5WrBM&w=800&h=800&q=covid%20svg&client=firefox-b-d&ved=2ahUKEwjh__6WisfzAhWJyqQKHeeLCa0QMygDegUIARCKAQ');
+  background-size: contain;
+  background-repeat: no-repeat;
+}

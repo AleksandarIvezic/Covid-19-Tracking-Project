@@ -1,68 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { loadHistoryThunk } from '../Redux/countries/countries';
+import PropTypes from 'prop-types';
+import '../styling/Country.css';
 
-const Country = ({ current }) => {
-  const dispatch = useDispatch();
-  const countryData = useSelector((state) => state.countriesReducer.countries[current]);
-  const [data, setData] = useState(countryData);
-
-  const historyData = useSelector((state) => state.countriesReducer.currentHistory);
-  const handleClick = (obj) => setData(historyData[obj].countries[current]);
-
+const Country = ({ country, totalConfirmed }) => {
   const history = useHistory();
   const handleRoute = (route) => {
     history.push(route);
   };
-  useEffect(() => {
-    dispatch(loadHistoryThunk(current));
-  }, [dispatch]);
-  console.log('history', data);
+
   return (
-    <div>
-
-      <h3>{current}</h3>
-      <table className="table">
-        <tbody>
-          <tr>
-            <td>Date</td>
-            <td>{data.date}</td>
-          </tr>
-          <tr onClick={() => handleRoute('/newCases')}>
-            <td>New cases</td>
-            <td>{data.today_new_confirmed}</td>
-            <td>&gt;</td>
-          </tr>
-          <tr>
-            <td>Recovered</td>
-            <td>{data.today_new_recovered}</td>
-          </tr>
-          <tr>
-            <td>Deaths</td>
-            <td>{data.today_new_deaths}</td>
-          </tr>
-        </tbody>
-      </table>
-      <h4>Check history</h4>
-      <ul>
-        {historyData && Object.keys(historyData).map((date) => (
-          <li
-            key={date}
-          >
-            {date}
-            <button type="button" onClick={() => handleClick(date)}>details</button>
-          </li>
-        ))}
-      </ul>
-
-    </div>
+    <button className="position-relative country " type="button" onClick={() => handleRoute('/country')}>
+      <img className="c-img" src="virus-img.png" alt="virus" width="50" height="50" />
+      <div className="text d-flex flex-column justify-content-center">
+        <span>{country}</span>
+        <span>{totalConfirmed}</span>
+      </div>
+      <i className="far fa-arrow-alt-circle-right position-absolute top-0 end-0"> </i>
+    </button>
   );
 };
 
 Country.propTypes = {
-  current: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  totalConfirmed: PropTypes.number.isRequired,
 };
 
 export default Country;

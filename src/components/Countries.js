@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { loadCountriesThunk, selectCountry } from '../Redux/countries/countries';
+import Country from './Country';
 
 const Countries = () => {
   const countries = useSelector((state) => state.countriesReducer.countries);
@@ -11,18 +11,22 @@ const Countries = () => {
   }, [dispatch]);
 
   const handleClick = (country) => dispatch(selectCountry(country));
+
+  // const history = useHistory();
+  // const handleRoute = (route) => {
+  //   history.push(route);
+  // };
   return (
     <div>
-      <span>Countries</span>
-      <ul>
+      <span>Select a country</span>
+      <ul className="d-flex flex-wrap">
         {Object.keys(countries).map((key) => (
-          <li key={key}>
-            <Link
-              to="/country"
+          <li key={key} className="w-50">
+            <Country
+              country={key}
+              totalConfirmed={countries[key].today_confirmed}
               onClick={() => handleClick(key)}
-            >
-              {key}
-            </Link>
+            />
           </li>
         ))}
       </ul>

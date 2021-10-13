@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router';
 import { useSelector } from 'react-redux';
 import Navbar from './Navbar';
 import Countries from './Countries';
-import Country from './Country';
+import CountryDetails from './CountryDetails';
 import NewCases from './NewCases';
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
           <Countries />
         </Route>
         <Route path="/country">
-          <Country current={currentCountry} />
+          <CountryDetails current={currentCountry} />
         </Route>
         <Route path="/newCases">
           <NewCases />
