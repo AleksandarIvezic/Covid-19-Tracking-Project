@@ -12,10 +12,6 @@ const Countries = () => {
 
   const handleClick = (country) => dispatch(selectCountry(country));
 
-  // const history = useHistory();
-  // const handleRoute = (route) => {
-  //   history.push(route);
-  // };
   return (
     <div>
       <span>Select a country</span>
@@ -25,7 +21,7 @@ const Countries = () => {
             <Country
               country={key}
               totalConfirmed={countries[key].today_confirmed}
-              onClick={() => handleClick(key)}
+              handleClick={handleClick}
             />
           </li>
         ))}
