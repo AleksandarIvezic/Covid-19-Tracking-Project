@@ -10,6 +10,7 @@ import Deaths from './Deaths';
 import TotalCases from './TotalCases';
 import TotalRecovered from './TotalRecovered';
 import TotalDeaths from './TotalDeaths';
+import '../styling/CountryDetails.css';
 
 const CountryDetails = ({ current }) => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const CountryDetails = ({ current }) => {
   const historyData = useSelector((state) => state.countriesReducer.currentHistory);
   const history = useHistory();
   const { path, url } = useRouteMatch();
+  const total = countryData.today_confirmed;
 
   const tableRows = [
     {
@@ -82,12 +84,29 @@ const CountryDetails = ({ current }) => {
 
   return (
     <div>
-
+      <div className="header d-flex p-1">
+        <img
+          className="p-4"
+          src="virus-img.png"
+          alt="world-map"
+          width="50%"
+          height="50%"
+        />
+        <div className="right-side d-flex flex-column align-items-center justify-content-center w-50 fw-bold">
+          <h1 className="m-0 fs-3 lh-1 fw-bolder">{current}</h1>
+          <span className="lh-1">
+            {total && Intl.NumberFormat('de-DE').format(total)}
+          </span>
+          <span className="lh-1">total cases</span>
+        </div>
+      </div>
       <Switch>
         <Route exact path={path}>
           <div className="wrapper">
-            <h3>{current}</h3>
-            <table className="table">
+            <div className="d-flex stripe-text justify-content-between">
+              <span className="m-1">LATEST STATS</span>
+            </div>
+            <table className="table text-light border-0 align-middle">
               <tbody>
                 <tr>
                   <td>Date</td>
@@ -96,6 +115,7 @@ const CountryDetails = ({ current }) => {
                 </tr>
                 {tableRows.map((tableData) => (
                   <tr
+                    className="pointer"
                     key={tableData.id}
                     onClick={() => {
                       handleRoute(`${url}/${tableData.url}`);
@@ -104,7 +124,9 @@ const CountryDetails = ({ current }) => {
                   >
                     <td>{tableData.text}</td>
                     <td>{tableData.value}</td>
-                    <td><i className="far fa-arrow-alt-circle-right "> </i></td>
+                    <td>
+                      <i className="far fa-arrow-alt-circle-right "> </i>
+                    </td>
                   </tr>
                 ))}
               </tbody>
