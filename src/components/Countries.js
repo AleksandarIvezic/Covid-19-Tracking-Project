@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loadCountriesThunk, selectCountry } from '../Redux/countries/countries';
 import Country from './Country';
 import Search from './Search';
+import '../styling/Countries.css';
 
 const Countries = () => {
   const countries = useSelector((state) => state.countriesReducer.countries);
@@ -38,7 +39,6 @@ const Countries = () => {
           <span className="lh-1">total cases</span>
         </div>
       </div>
-      <span>Select a country</span>
       <Search handleChange={handleChange} />
       <ul className="d-flex flex-wrap">
         {filteredCountries && filteredCountries.map((key) => (
