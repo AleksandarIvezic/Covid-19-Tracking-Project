@@ -5,6 +5,11 @@ import { useHistory } from 'react-router-dom';
 import { Route, Switch, useRouteMatch } from 'react-router';
 import { loadHistoryThunk } from '../Redux/countries/countries';
 import NewCases from './NewCases';
+import Recovered from './Recovered';
+import Deaths from './Deaths';
+import TotalCases from './TotalCases';
+import TotalRecovered from './TotalRecovered';
+import TotalDeaths from './TotalDeaths';
 
 const CountryDetails = ({ current }) => {
   const dispatch = useDispatch();
@@ -108,6 +113,21 @@ const CountryDetails = ({ current }) => {
         </Route>
         <Route exact path={`${path}/newCases`}>
           <NewCases data={chartData} country={current} />
+        </Route>
+        <Route exact path={`${path}/recovered`}>
+          <Recovered data={chartData} country={current} />
+        </Route>
+        <Route exact path={`${path}/deaths`}>
+          <Deaths data={chartData} country={current} />
+        </Route>
+        <Route exact path={`${path}/totalCases`}>
+          <TotalCases data={chartData} country={current} />
+        </Route>
+        <Route exact path={`${path}/totalRecovered`}>
+          <TotalRecovered data={chartData} country={current} />
+        </Route>
+        <Route exact path={`${path}/totalDeaths`}>
+          <TotalDeaths data={chartData} country={current} />
         </Route>
       </Switch>
     </div>
