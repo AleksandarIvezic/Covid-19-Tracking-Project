@@ -25,8 +25,6 @@ const Countries = () => {
   });
   const handleChange = (e) => setFilteredCountries(filterCountries(e.target.value));
 
-  console.log(Object.keys(countries));
-
   return (
     <div>
       <span>Select a country</span>
