@@ -15,6 +15,11 @@ h6 {
   font-weight: 900;
 }
 
+body {
+  background:#5687E4 !important;
+  height: 100vh;
+}
+
 code {
   font-family: 'Lato', sans-serif;
 }

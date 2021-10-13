@@ -8,3 +8,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+button {
+  background-color: transparent;
+  border: none;
+}
