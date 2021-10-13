@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import Navbar from './Navbar';
 import Countries from './Countries';
 import CountryDetails from './CountryDetails';
-import NewCases from './NewCases';
 
 function App() {
   const currentCountry = useSelector((state) => state.countriesReducer.currentCountry);
@@ -17,9 +16,6 @@ function App() {
         </Route>
         <Route path="/country">
           <CountryDetails current={currentCountry} />
-        </Route>
-        <Route path="/newCases">
-          <NewCases />
         </Route>
       </Switch>
     </div>
