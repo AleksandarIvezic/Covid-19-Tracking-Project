@@ -30,7 +30,7 @@ const Countries = () => {
   return (
     <div>
       <div className="header d-flex p-1">
-        <img src="World_map.png" alt="world-map" width="50%" height="50%" />
+        <img className="c-img" src="World_map_svg.svg" alt="world-map" width="50%" height="50%" />
         <div className="right-side d-flex flex-column align-items-center justify-content-center w-50 fw-bold">
           <h1 className="m-0 fs-3 lh-1 fw-bolder">WORLD</h1>
           <span className="lh-1">

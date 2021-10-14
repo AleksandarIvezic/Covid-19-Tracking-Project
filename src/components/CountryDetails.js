@@ -7,7 +7,7 @@ import { loadHistoryThunk } from '../Redux/countries/countries';
 import LineChart from './Chart';
 import '../styling/CountryDetails.css';
 
-const CountryDetails = ({ current }) => {
+const CountryDetails = ({ current, img }) => {
   const dispatch = useDispatch();
   const countryData = useSelector((state) => state.countriesReducer.countries[current]);
   const [chartData, setChartData] = useState([]);
@@ -81,8 +81,8 @@ const CountryDetails = ({ current }) => {
     <div>
       <div className="header d-flex p-1">
         <img
-          className="p-4"
-          src="virus-img.png"
+          className="p-4 c-img"
+          src={img}
           alt="world-map"
           width="50%"
           height="50%"
@@ -153,6 +153,7 @@ const CountryDetails = ({ current }) => {
 
 CountryDetails.propTypes = {
   current: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
 };
 
 export default CountryDetails;

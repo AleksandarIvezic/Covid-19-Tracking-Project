@@ -6,7 +6,7 @@ const Navbar = () => {
   const history = useHistory();
   const location = useLocation();
   return (
-    <nav className="d-flex justify-content-between p-1">
+    <nav className="d-flex justify-content-between p-1 sticky-top">
       {(location.pathname !== '/') ? <button className="back" type="button" onClick={history.goBack}><i className="fas fa-chevron-left text-light"> </i></button> : <span className="fw-bold text-uppercase">Countries</span>}
       <span className="fw-light fs-6 text-lowercase">
         Track COVID-19
