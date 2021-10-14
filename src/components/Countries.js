@@ -42,13 +42,16 @@ const Countries = () => {
       <Search handleChange={handleChange} />
       <ul className="d-flex flex-wrap">
         {filteredCountries && filteredCountries.map((key) => (
-          <li key={key} className="w-50">
-            <Country
-              country={key}
-              totalConfirmed={countries[key].today_confirmed}
-              handleClick={handleClick}
-            />
-          </li>
+          (key !== 'Kosovo')
+          && (
+            <li key={key} className="w-50">
+              <Country
+                country={key}
+                totalConfirmed={countries[key].today_confirmed}
+                handleClick={handleClick}
+              />
+            </li>
+          )
         ))}
       </ul>
     </div>

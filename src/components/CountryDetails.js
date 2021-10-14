@@ -4,12 +4,7 @@ import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { Route, Switch, useRouteMatch } from 'react-router';
 import { loadHistoryThunk } from '../Redux/countries/countries';
-import NewCases from './NewCases';
-import Recovered from './Recovered';
-import Deaths from './Deaths';
-import TotalCases from './TotalCases';
-import TotalRecovered from './TotalRecovered';
-import TotalDeaths from './TotalDeaths';
+import LineChart from './Chart';
 import '../styling/CountryDetails.css';
 
 const CountryDetails = ({ current }) => {
@@ -58,7 +53,7 @@ const CountryDetails = ({ current }) => {
       category: 'today_recovered',
     },
     {
-      id: 5,
+      id: 6,
       text: 'Total deaths',
       value: countryData.today_deaths,
       url: 'totalDeaths',
@@ -134,22 +129,22 @@ const CountryDetails = ({ current }) => {
           </div>
         </Route>
         <Route exact path={`${path}/newCases`}>
-          <NewCases data={chartData} country={current} />
+          <LineChart chartData={chartData} country={current} type="new Cases" />
         </Route>
         <Route exact path={`${path}/recovered`}>
-          <Recovered data={chartData} country={current} />
+          <LineChart chartData={chartData} country={current} type="recovered" />
         </Route>
         <Route exact path={`${path}/deaths`}>
-          <Deaths data={chartData} country={current} />
+          <LineChart chartData={chartData} country={current} type="deaths" />
         </Route>
         <Route exact path={`${path}/totalCases`}>
-          <TotalCases data={chartData} country={current} />
+          <LineChart chartData={chartData} country={current} type="totalCases" />
         </Route>
         <Route exact path={`${path}/totalRecovered`}>
-          <TotalRecovered data={chartData} country={current} />
+          <LineChart chartData={chartData} country={current} type="totalRecovered" />
         </Route>
         <Route exact path={`${path}/totalDeaths`}>
-          <TotalDeaths data={chartData} country={current} />
+          <LineChart chartData={chartData} country={current} type="totalDeaths" />
         </Route>
       </Switch>
     </div>

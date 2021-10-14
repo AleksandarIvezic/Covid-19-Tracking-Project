@@ -14,3 +14,6 @@ li:nth-child(4n+3) {
   background-color: #3E61A3;
 }
 
+.map {
+  transform: scale(1);
+}
