@@ -2,7 +2,7 @@
 
 # Covid-19 Tracking Project
 
-> "Covid-19 Tracking Project" is a mobile web application that displays Covid-19 tracking data from [Narrativa API](https://covid19tracking.narrativa.com/index_en.html).You can check detailed data for each country separately. It was built using React and Redux libraries.
+> "Covid-19 Tracking Project" is a mobile web application that displays Covid-19 tracking data from [Narrativa API](https://covid19tracking.narrativa.com/index_en.html). You can check detailed data for each country separately. It was build using React and Redux libraries.
 
 
 ![screenshot](./public/screenshot.png)
@@ -18,7 +18,7 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and run the app, follow these simple example steps.
 
 ### Prerequisites
 
@@ -35,19 +35,19 @@ git clone git@github.com:ShinobiWarior/Covid-19-Tracking-Project.git
 or download [ZIP file](https://github.com/ShinobiWarior/Covid-19-Tracking-Project/archive/refs/heads/dev.zip)
 
 ### Install
-To install all dependencies run:
+To install all dependencies, run:
 ```
 npm install
 ```
 ### Usage
-To run it on the browser you can run in the project directory:
+To open it in the browser, in the project directory, run:
 
  ```
  npm start
  ```
 
 ## Run tests 
-To test the project please run in the project directory:
+To test the project, please run in the project directory:
 
 ```
 npm test
