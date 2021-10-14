@@ -1,17 +1,21 @@
 .header {
-  background: #5687E4;
+  background: #5687e4;
 }
+
 li:nth-child(4n+0) {
   background-color: #4b74c2;
 }
+
 li:nth-child(4n+1) {
   background-color: #4b74c2;
 }
+
 li:nth-child(4n+2) {
-  background-color: #3E61A3;
+  background-color: #3e61a3;
 }
+
 li:nth-child(4n+3) {
-  background-color: #3E61A3;
+  background-color: #3e61a3;
 }
 
 .map {

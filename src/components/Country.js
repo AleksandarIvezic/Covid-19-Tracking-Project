@@ -12,7 +12,7 @@ const Country = ({ country, totalConfirmed, handleClick }) => {
 
   const iso = countryIso[country];
 
-  const link = iso ? `https://raw.githubusercontent.com/djaiss/mapsicon/33ba28808f8d32b5bae0ffada9cadd07073852e1/all/${iso.toLowerCase()}/vector.svg` : '/World_map.png';
+  const link = iso ? `https://raw.githubusercontent.com/djaiss/mapsicon/33ba28808f8d32b5bae0ffada9cadd07073852e1/all/${iso.toLowerCase()}/vector.svg` : '/World_map_svg.svg';
   const nameCountry = country.length > 18 ? country.split(' ')[0] : country;
 
   return (
