@@ -3,15 +3,16 @@ import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { Route, Switch, useRouteMatch } from 'react-router';
-import { loadHistoryThunk } from '../Redux/countries/countries';
+import { loadHistoryThunk, isLoading } from '../Redux/countries/countries';
 import LineChart from './Chart';
 import '../styling/CountryDetails.css';
 
 const CountryDetails = ({ current, img }) => {
   const dispatch = useDispatch();
   const countryData = useSelector((state) => state.countriesReducer.countries[current]);
-  const [chartData, setChartData] = useState([]);
   const historyData = useSelector((state) => state.countriesReducer.currentHistory);
+  const loading = useSelector((state) => state.countriesReducer.loading);
+  const [chartData, setChartData] = useState([]);
   const history = useHistory();
   const { path, url } = useRouteMatch();
   const total = countryData.today_confirmed;
@@ -74,6 +75,7 @@ const CountryDetails = ({ current, img }) => {
   };
 
   useEffect(() => {
+    dispatch(isLoading());
     dispatch(loadHistoryThunk(current));
   }, [dispatch]);
 
@@ -108,7 +110,7 @@ const CountryDetails = ({ current, img }) => {
                   <td>{countryData.date}</td>
                   <td> </td>
                 </tr>
-                {tableRows.map((tableData) => (
+                {!loading && tableRows.map((tableData) => (
                   <tr
                     className="pointer"
                     key={tableData.id}

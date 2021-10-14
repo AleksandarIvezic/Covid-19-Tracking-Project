@@ -30,7 +30,7 @@ const Country = ({ country, totalConfirmed, handleClick }) => {
           <span>{Intl.NumberFormat('de-DE').format(totalConfirmed)}</span>
         </div>
       </div>
-      <i className="far fa-arrow-alt-circle-right position-absolute top-0 end-0"> </i>
+      <i className="far fa-arrow-alt-circle-right position-absolute top-0 end-0 p-2"> </i>
     </button>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { loadCountriesThunk, selectCountry } from '../Redux/countries/countries';
+import { loadCountriesThunk, selectCountry, isLoading } from '../Redux/countries/countries';
 import Country from './Country';
 import Search from './Search';
 import '../styling/Countries.css';
@@ -12,6 +12,7 @@ const Countries = () => {
   const [filteredCountries, setFilteredCountries] = useState(Object.keys(countries));
 
   useEffect(() => {
+    dispatch(isLoading());
     dispatch(loadCountriesThunk());
   }, [dispatch]);
 
