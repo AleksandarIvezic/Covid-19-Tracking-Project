@@ -5,6 +5,8 @@ nav {
   border: none;
   background: transparent;
   color: #fff;
+  width: 15%;
+  text-align: start;
 }
 
 i:hover {
