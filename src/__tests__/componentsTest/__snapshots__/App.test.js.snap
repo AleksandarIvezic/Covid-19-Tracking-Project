@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App renders correctly 1`] = `
+<div
+  className="App"
+>
+  <nav
+    className="d-flex justify-content-between p-1 sticky-top"
+  >
+    <span
+      className="fw-bold text-uppercase"
+    >
+      Countries
+    </span>
+    <span
+      className="fw-light fs-6 text-lowercase"
+    >
+      Track COVID-19
+      /
+    </span>
+    <div>
+      <i
+        className="fas fa-microphone mx-1"
+      />
+      <i
+        className="fas fa-cog mx-1"
+      />
+    </div>
+  </nav>
+  <div>
+    <div
+      className="header d-flex p-1"
+    >
+      <img
+        alt="world-map"
+        className="c-img"
+        height="50%"
+        src="World_map_svg.svg"
+        width="50%"
+      />
+      <div
+        className="right-side d-flex flex-column align-items-center justify-content-center w-50 fw-bold"
+      >
+        <h1
+          className="m-0 fs-3 lh-1 fw-bolder"
+        >
+          WORLD
+        </h1>
+        <span
+          className="lh-1"
+        />
+        <span
+          className="lh-1"
+        >
+          total cases
+        </span>
+      </div>
+    </div>
+    <form
+      className="d-flex stripe-text justify-content-between"
+    >
+      <span
+        className="m-1"
+      >
+        STATS BY COUNTRY
+      </span>
+      <input
+        name="search"
+        onChange={[Function]}
+        placeholder="Search"
+        type="text"
+      />
+    </form>
+    <ul
+      className="d-flex flex-wrap"
+    />
+  </div>
+</div>
+`;

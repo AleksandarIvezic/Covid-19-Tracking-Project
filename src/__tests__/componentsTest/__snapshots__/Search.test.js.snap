@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search renders correctly 1`] = `
+<form
+  className="d-flex stripe-text justify-content-between"
+>
+  <span
+    className="m-1"
+  >
+    STATS BY COUNTRY
+  </span>
+  <input
+    name="search"
+    onChange={[Function]}
+    placeholder="Search"
+    type="text"
+  />
+</form>
+`;
