@@ -20,7 +20,7 @@ exports[`Country renders correctly 1`] = `
       className="text d-flex flex-column justify-content-center"
     >
       <span
-        className="fw-bold text-uppercase"
+        className="fw-bold text-uppercase "
       >
         Serbia
       </span>
