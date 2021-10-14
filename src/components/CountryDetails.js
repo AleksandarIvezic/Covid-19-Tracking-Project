@@ -103,13 +103,14 @@ const CountryDetails = ({ current, img }) => {
             <div className="d-flex stripe-text justify-content-between">
               <span className="m-1">LATEST STATS</span>
             </div>
-            <table className="table text-light border-0 align-middle">
+            <table className="table text-light border-0 align-middle ">
               <tbody>
                 <tr>
                   <td>Date</td>
                   <td>{countryData.date}</td>
                   <td> </td>
                 </tr>
+                {loading && <img className="loading-img" src="virus-img.png" alt="loader" />}
                 {!loading && tableRows.map((tableData) => (
                   <tr
                     className="pointer"

@@ -10,6 +10,7 @@ const Countries = () => {
   const total = useSelector((state) => state.countriesReducer.total);
   const dispatch = useDispatch();
   const [filteredCountries, setFilteredCountries] = useState(Object.keys(countries));
+  const loading = useSelector((state) => state.countriesReducer.loading);
 
   useEffect(() => {
     dispatch(isLoading());
@@ -41,6 +42,7 @@ const Countries = () => {
         </div>
       </div>
       <Search handleChange={handleChange} />
+      {loading && <img className="loading-img" src="virus-img.png" alt="loader" />}
       <ul className="d-flex flex-wrap">
         {filteredCountries && filteredCountries.map((key) => (
           (key !== 'Kosovo')
@@ -55,6 +57,9 @@ const Countries = () => {
           )
         ))}
       </ul>
+      {!filteredCountries.length
+      && !loading
+      && <h3>SORRY, WE DON&apos;T HAVE RESULTS FOR YOUR SERCH!!! :(</h3>}
     </div>
   );
 };

@@ -13,6 +13,7 @@ const Country = ({ country, totalConfirmed, handleClick }) => {
   const iso = countryIso[country];
 
   const link = iso ? `https://raw.githubusercontent.com/djaiss/mapsicon/33ba28808f8d32b5bae0ffada9cadd07073852e1/all/${iso.toLowerCase()}/vector.svg` : '/World_map.png';
+  const nameCountry = country.length > 18 ? country.split(' ')[0] : country;
 
   return (
     <button
@@ -26,7 +27,7 @@ const Country = ({ country, totalConfirmed, handleClick }) => {
       <img className="c-img" src={link} alt="country" width="100" height="100" />
       <div className="bottom d-flex justify-content-end">
         <div className="text d-flex flex-column justify-content-center">
-          <span className="fw-bold text-uppercase">{country}</span>
+          <span className="fw-bold text-uppercase ">{nameCountry}</span>
           <span>{Intl.NumberFormat('de-DE').format(totalConfirmed)}</span>
         </div>
       </div>
