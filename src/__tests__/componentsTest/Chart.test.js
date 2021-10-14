@@ -3,9 +3,20 @@ import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router';
-import store from '../../redux/storeConfig';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
+import thunk from 'redux-thunk';
+import { countriesReducer } from '../../Redux/countries/countries';
 import LineChart from '../../components/Chart';
 
+const reducer = combineReducers({
+  countriesReducer,
+});
+
+const store = createStore(
+  reducer,
+  applyMiddleware(logger, thunk),
+);
 describe('LineChart', () => {
   it('renders correctly', () => {
     const tree = renderer

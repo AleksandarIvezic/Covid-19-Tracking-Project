@@ -8,22 +8,22 @@ exports[`App renders correctly 1`] = `
     className="d-flex justify-content-between p-1 sticky-top"
   >
     <span
-      className="fw-bold text-uppercase"
+      className="fw-bold text-uppercase back"
     >
       Countries
     </span>
     <span
       className="fw-light fs-6 text-lowercase"
     >
-      Track COVID-19
+      Tracking
       /
     </span>
     <div>
       <i
-        className="fas fa-microphone mx-1"
+        className="fas fa-microphone mx-2"
       />
       <i
-        className="fas fa-cog mx-1"
+        className="fas fa-cog mx-2"
       />
     </div>
   </nav>
@@ -65,6 +65,7 @@ exports[`App renders correctly 1`] = `
         STATS BY COUNTRY
       </span>
       <input
+        className="search"
         name="search"
         onChange={[Function]}
         placeholder="Search"
@@ -74,6 +75,9 @@ exports[`App renders correctly 1`] = `
     <ul
       className="d-flex flex-wrap"
     />
+    <h3>
+      SORRY, WE DON'T HAVE RESULTS FOR YOUR SERCH!!! :(
+    </h3>
   </div>
 </div>
 `;

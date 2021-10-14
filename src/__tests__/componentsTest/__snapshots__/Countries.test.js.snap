@@ -39,6 +39,7 @@ exports[`Countries renders correctly 1`] = `
       STATS BY COUNTRY
     </span>
     <input
+      className="search"
       name="search"
       onChange={[Function]}
       placeholder="Search"
@@ -48,5 +49,8 @@ exports[`Countries renders correctly 1`] = `
   <ul
     className="d-flex flex-wrap"
   />
+  <h3>
+    SORRY, WE DON'T HAVE RESULTS FOR YOUR SERCH!!! :(
+  </h3>
 </div>
 `;

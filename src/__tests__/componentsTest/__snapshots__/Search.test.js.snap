@@ -10,6 +10,7 @@ exports[`Search renders correctly 1`] = `
     STATS BY COUNTRY
   </span>
   <input
+    className="search"
     name="search"
     onChange={[Function]}
     placeholder="Search"
