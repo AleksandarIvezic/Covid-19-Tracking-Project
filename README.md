@@ -14,7 +14,7 @@
 
 ## Live demo link
 
-[Demo link]()
+[Demo link](https://shinobiwarior.github.io/Covid-19-Tracking-Project/)
 
 ## Getting Started
 
