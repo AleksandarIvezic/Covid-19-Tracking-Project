@@ -1,27 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { loadCountriesThunk, selectCountry, isLoading } from '../Redux/countries/countries';
+import PropTypes from 'prop-types';
 import Country from './Country';
 import Search from './Search';
 import '../styling/Countries.css';
 
-const Countries = () => {
-  const countries = useSelector((state) => state.countriesReducer.countries);
-  const total = useSelector((state) => state.countriesReducer.total);
-  const dispatch = useDispatch();
+const Countries = ({
+  countries, total, loading, handleClick,
+}) => {
   const [filteredCountries, setFilteredCountries] = useState(Object.keys(countries));
-  const loading = useSelector((state) => state.countriesReducer.loading);
-
-  useEffect(() => {
-    dispatch(isLoading());
-    dispatch(loadCountriesThunk());
-  }, [dispatch]);
 
   useEffect(() => {
     setFilteredCountries(Object.keys(countries));
   }, [countries]);
-
-  const handleClick = (country) => dispatch(selectCountry(country));
 
   const filterCountries = (text) => Object.keys(countries).filter((country) => {
     const regex = new RegExp(text, 'gi');
@@ -62,6 +52,20 @@ const Countries = () => {
       && <h3>SORRY, WE DON&apos;T HAVE RESULTS FOR YOUR SERCH!!! :(</h3>}
     </div>
   );
+};
+
+Countries.defaultProps = {
+  loading: true,
+  total: {},
+};
+
+Countries.propTypes = {
+  countries: PropTypes.objectOf(PropTypes.object).isRequired,
+  total: PropTypes.shape({
+    today_confirmed: PropTypes.number,
+  }),
+  loading: PropTypes.bool,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default Countries;

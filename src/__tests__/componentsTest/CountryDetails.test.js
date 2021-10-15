@@ -1,34 +1,21 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { Route } from 'react-router';
-import { createStore, combineReducers, applyMiddleware } from 'redux';
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
-import { countriesReducer } from '../../Redux/countries/countries';
 import CountryDetails from '../../components/CountryDetails';
-
-const reducer = combineReducers({
-  countriesReducer,
-});
-
-const store = createStore(
-  reducer,
-  applyMiddleware(logger, thunk),
-);
 
 describe('CountryDetails', () => {
   it('renders correctly', () => {
     const tree = renderer
       .create(
-        <Provider store={store}>
-          <BrowserRouter>
-            <Route path="/country">
-              <CountryDetails current="Serbia" img="https://raw.githubusercontent.com/djaiss/mapsicon/33ba28808f8d32b5bae0ffada9cadd07073852e1/all/serbia/vector.svg" />
-            </Route>
-          </BrowserRouter>
-        </Provider>,
+        <BrowserRouter>
+          <Route path="/country">
+            <CountryDetails
+              current="Serbia"
+              img="https://raw.githubusercontent.com/djaiss/mapsicon/33ba28808f8d32b5bae0ffada9cadd07073852e1/all/serbia/vector.svg"
+            />
+          </Route>
+        </BrowserRouter>,
       )
       .toJSON();
     expect(tree).toMatchSnapshot();

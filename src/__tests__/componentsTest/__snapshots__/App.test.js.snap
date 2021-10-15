@@ -48,7 +48,9 @@ exports[`App renders correctly 1`] = `
         </h1>
         <span
           className="lh-1"
-        />
+        >
+          NaN
+        </span>
         <span
           className="lh-1"
         >
@@ -72,12 +74,14 @@ exports[`App renders correctly 1`] = `
         type="text"
       />
     </form>
+    <img
+      alt="loader"
+      className="loading-img"
+      src="virus-img.png"
+    />
     <ul
       className="d-flex flex-wrap"
     />
-    <h3>
-      SORRY, WE DON'T HAVE RESULTS FOR YOUR SERCH!!! :(
-    </h3>
   </div>
 </div>
 `;

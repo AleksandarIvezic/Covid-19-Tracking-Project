@@ -22,7 +22,9 @@ exports[`Countries renders correctly 1`] = `
       </h1>
       <span
         className="lh-1"
-      />
+      >
+        23.432
+      </span>
       <span
         className="lh-1"
       >
@@ -48,9 +50,83 @@ exports[`Countries renders correctly 1`] = `
   </form>
   <ul
     className="d-flex flex-wrap"
-  />
-  <h3>
-    SORRY, WE DON'T HAVE RESULTS FOR YOUR SERCH!!! :(
-  </h3>
+  >
+    <li
+      className="w-50"
+    >
+      <button
+        className="country position-relative country text-light"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="country"
+          className="c-img"
+          height="100"
+          src="/World_map_svg.svg"
+          width="100"
+        />
+        <div
+          className="bottom d-flex justify-content-end"
+        >
+          <div
+            className="text d-flex flex-column justify-content-center"
+          >
+            <span
+              className="fw-bold text-uppercase "
+            >
+              Afganistan
+            </span>
+            <span>
+              23.432
+            </span>
+          </div>
+        </div>
+        <i
+          className="far fa-arrow-alt-circle-right position-absolute top-0 end-0 p-2"
+        >
+           
+        </i>
+      </button>
+    </li>
+    <li
+      className="w-50"
+    >
+      <button
+        className="country position-relative country text-light"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="country"
+          className="c-img"
+          height="100"
+          src="https://raw.githubusercontent.com/djaiss/mapsicon/33ba28808f8d32b5bae0ffada9cadd07073852e1/all/al/vector.svg"
+          width="100"
+        />
+        <div
+          className="bottom d-flex justify-content-end"
+        >
+          <div
+            className="text d-flex flex-column justify-content-center"
+          >
+            <span
+              className="fw-bold text-uppercase "
+            >
+              Albania
+            </span>
+            <span>
+              23.432
+            </span>
+          </div>
+        </div>
+        <i
+          className="far fa-arrow-alt-circle-right position-absolute top-0 end-0 p-2"
+        >
+           
+        </i>
+      </button>
+    </li>
+  </ul>
 </div>
 `;

@@ -1,3 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LineChart renders correctly 1`] = `null`;
+exports[`LineChart renders correctly 1`] = `
+Array [
+  <div
+    className="d-flex stripe-text justify-content-between"
+  >
+    <span
+      className="m-1"
+    >
+      LAST 7 DAYS STATS
+    </span>
+  </div>,
+  <canvas
+    data-testid="canvas"
+    height={150}
+    onClick={[Function]}
+    role="img"
+    width={300}
+  />,
+]
+`;

@@ -7,7 +7,7 @@ const HISTORY = 'covid-19-tracking-project/countries/HISTORY';
 const IS_LOADING = 'covid-19-tracking-project/countries/IS_LOADING';
 
 const initialValue = {
-  countries: [],
+  countries: {},
 };
 
 const countriesReducer = (state = initialValue, action) => {

@@ -154,8 +154,12 @@ const CountryDetails = ({ current, img }) => {
   );
 };
 
+CountryDetails.defaultProps = {
+  current: 'Country unknown',
+};
+
 CountryDetails.propTypes = {
-  current: PropTypes.string.isRequired,
+  current: PropTypes.string,
   img: PropTypes.string.isRequired,
 };
 
