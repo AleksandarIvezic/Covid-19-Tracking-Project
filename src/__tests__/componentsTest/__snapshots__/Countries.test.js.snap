@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Countries renders correctly 1`] = `
+<div>
+  <div
+    className="header d-flex p-1"
+  >
+    <img
+      alt="world-map"
+      className="c-img"
+      height="50%"
+      src="World_map_svg.svg"
+      width="50%"
+    />
+    <div
+      className="right-side d-flex flex-column align-items-center justify-content-center w-50 fw-bold"
+    >
+      <h1
+        className="m-0 fs-3 lh-1 fw-bolder"
+      >
+        WORLD
+      </h1>
+      <span
+        className="lh-1"
+      >
+        23.432
+      </span>
+      <span
+        className="lh-1"
+      >
+        total cases
+      </span>
+    </div>
+  </div>
+  <form
+    className="d-flex stripe-text justify-content-between"
+  >
+    <span
+      className="m-1"
+    >
+      STATS BY COUNTRY
+    </span>
+    <input
+      className="search"
+      name="search"
+      onChange={[Function]}
+      placeholder="Search"
+      type="text"
+    />
+  </form>
+  <ul
+    className="d-flex flex-wrap"
+  >
+    <li
+      className="w-50"
+    >
+      <button
+        className="country position-relative country text-light"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="country"
+          className="c-img"
+          height="100"
+          src="/World_map_svg.svg"
+          width="100"
+        />
+        <div
+          className="bottom d-flex justify-content-end"
+        >
+          <div
+            className="text d-flex flex-column justify-content-center"
+          >
+            <span
+              className="fw-bold text-uppercase "
+            >
+              Afganistan
+            </span>
+            <span>
+              23.432
+            </span>
+          </div>
+        </div>
+        <i
+          className="far fa-arrow-alt-circle-right position-absolute top-0 end-0 p-2"
+        >
+           
+        </i>
+      </button>
+    </li>
+    <li
+      className="w-50"
+    >
+      <button
+        className="country position-relative country text-light"
+        onClick={[Function]}
+        type="button"
+      >
+        <img
+          alt="country"
+          className="c-img"
+          height="100"
+          src="https://raw.githubusercontent.com/djaiss/mapsicon/33ba28808f8d32b5bae0ffada9cadd07073852e1/all/al/vector.svg"
+          width="100"
+        />
+        <div
+          className="bottom d-flex justify-content-end"
+        >
+          <div
+            className="text d-flex flex-column justify-content-center"
+          >
+            <span
+              className="fw-bold text-uppercase "
+            >
+              Albania
+            </span>
+            <span>
+              23.432
+            </span>
+          </div>
+        </div>
+        <i
+          className="far fa-arrow-alt-circle-right position-absolute top-0 end-0 p-2"
+        >
+           
+        </i>
+      </button>
+    </li>
+  </ul>
+</div>
+`;

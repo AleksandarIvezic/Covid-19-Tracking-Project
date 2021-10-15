@@ -1,0 +1,17 @@
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border: none !important;
+  height: 100px;
+}
+
+.pointer:hover {
+  cursor: pointer;
+}
+
+tr:nth-child(even) {
+  background-color: #35548b;
+}

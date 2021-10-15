@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Country renders correctly 1`] = `
+<button
+  className="country position-relative country text-light"
+  onClick={[Function]}
+  type="button"
+>
+  <img
+    alt="country"
+    className="c-img"
+    height="100"
+    src="https://raw.githubusercontent.com/djaiss/mapsicon/33ba28808f8d32b5bae0ffada9cadd07073852e1/all/rs/vector.svg"
+    width="100"
+  />
+  <div
+    className="bottom d-flex justify-content-end"
+  >
+    <div
+      className="text d-flex flex-column justify-content-center"
+    >
+      <span
+        className="fw-bold text-uppercase "
+      >
+        Serbia
+      </span>
+      <span>
+        7
+      </span>
+    </div>
+  </div>
+  <i
+    className="far fa-arrow-alt-circle-right position-absolute top-0 end-0 p-2"
+  >
+     
+  </i>
+</button>
+`;
