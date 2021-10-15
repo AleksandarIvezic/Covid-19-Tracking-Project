@@ -9,10 +9,3 @@ const getData = async () => {
 };
 
 export default getData;
-
-// const display = async () => {
-//   const data = await getData();
-//   console.log('displayed data', data);
-// };
-
-// display();
